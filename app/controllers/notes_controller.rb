@@ -1,6 +1,8 @@
 class NotesController < ApplicationController
   def index
+    # anims
     @notes = Note.all
+    
   end
 
   def show
@@ -8,6 +10,7 @@ class NotesController < ApplicationController
   end
 
   def new
+    new_anim
     @note = Note.new
   end
 
