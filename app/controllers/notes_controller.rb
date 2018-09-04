@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  before_action :find_post, only: [:show, :edit, :update]
+  before_action :find_post, only: [:show, :edit, :update, :destroy]
   def index
     @notes = Note.all.order("date DESC")
   end
@@ -33,7 +33,7 @@ class NotesController < ApplicationController
   end
 
   def destroy
-    Note.find(params[:id]).destroy
+    @note.destroy
     redirect_to notes_path
   end
 
