@@ -1,8 +1,16 @@
 <h1>Notes</h1>
-
-<% @notes.each do |note| %> 
-<h2><% note.author %></h2> 
-<%= link_to 'Show Note', note_path(note) %> 
+<% @notes.each do |n| %> 
+  <h3>Author: <%= n.author %></h3> 
+  <p>Date: <%= n.date %></p>
+  <p>Note: <%= truncate(n.body, :length => 15) %></p>
+  <br>
+  <%= link_to 'Show Note', note_path(n) %>
+  <br>
+  <%= link_to 'Edit Note', edit_note_path(n) %>
+  <br> 
+  <%= link_to 'Delete Note', n, method: :delete %>
+  <br>
+  <br>
+  <%= link_to 'New Note', new_note_path %>
+  
 <% end %> 
-
-<p><%= link_to 'New Note', new_note_path %></p>

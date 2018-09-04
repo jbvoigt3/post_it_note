@@ -1,4 +1,4 @@
-<h1><%= @note.author %></h1>
-<h4><%= @note.date %></h4>
-<p><%= @note.body %></p>
-<%= link_to 'Back', notes_path %>
+<h3><%= @note.author %></h3>
+  <p>Date: <%= @note.date %></p>
+  <p>Note: <%= @note.body %></p>
+  <%= link_to 'Back', notes_path %>
