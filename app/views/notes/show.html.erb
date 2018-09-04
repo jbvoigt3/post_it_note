@@ -1,4 +1,7 @@
 <h3><%= @note.author %></h3>
   <p>Date: <%= @note.date %></p>
   <p>Note: <%= @note.body %></p>
+  
+  <%= link_to 'Edit Note', edit_note_path(@note) %>
+  <%= link_to 'Delete Note', note_path(@note), method: :delete, data: {confirm: "Are you sure?"} %>
   <%= link_to 'Back', notes_path %>
